@@ -1,0 +1,68 @@
+#### HERENCIA
+
+Ciertas propiedades heredan, y ciertas no.
+Se puede forzar la herencia en propiedades que no heredan por defecto, ejemplo:
+.child {
+border: initial; Establece el borde como "inicial", por lo que se evita la herencia
+border: inherit; Establece el borde segun herencia del elemento padre
+}
+
+Para seleccionar un hijo directo de un elemento, utilizamos ">", ejemplo:
+article > p {
+color: black;
+}
+En este ejemplo, solo aplicara para los p que sean hijos directos.
+También existen los operadores ~ (para seleccionar elementos hermano siguentes) y + (para seleccionar elemento hermano inmediatamente siguiente)
+
+    	#### DESBORDAMIENTO
+
+box-sizing: border-box; //Alto se calculara considerando padding y margen
+
+overflow: scroll; //Agrega scrollbar al container para ver el contenido excedente
+overflow: auto; //Agrega scroll en forma similar a lo anterior, determina automaticamente sidebe aparecer scrollbar o no (segun si te estas desplazando o no).
+
+text-overflow: ellipsis; //Agrega tres puntitos indicando que el overflow de texto continua.
+
+    	#### POSITION
+
+position: absolute; Se posiciona segun el documento entero. Podemos determinar coordenadas en el documento utilizando top/bottom y right/left
+
+Si al elemento padre, le incluimos position: relative; Los hijos de este con position: absolute; se posicionaran segun este punto de referencia
+
+Para centrar un contenido (no es lo mas recomendado, pero si puede ser util en caso de centrar un modal por ejemplo):
+inset: 0; //Es lo mismo que igualar top, bottom, right, left a 0
+margin: auto;
+
+position: fixed; //Posicion fija segun el viewport (util para navbars)
+position: sticky; //Posicion fija segun el contenedor padre con position absolute (pegado al contenedor en el que esta, desaparecera de la pantalla una vez el padre desaparezca)
+
+    ### ZINDEX
+
+A mayor valor, se mostrara delante del otro elemento \*SE REQUIERE QUE EL PADRE TENGA POSITION RELATIVE
+zindex 1 se mostrara detras de zindex 2
+
+    ### FLEXBOX
+
+display: flex; //Se coloca sobre el padre, organiza a sus hijos de forma flexible
+flex-direction: column / row; //Flex solo permite trabajar en una direccion (filas o columnas)
+
+flex-wrap: nowrap; //Si no hay suficiente espacio en el contenedor, encoge los elementos de forma que quepan sin hacer salto de linea. Si indico flex-wrap: wrap; en caso de no caber, hara un salto de linea
+
+SOBRE EL HIJO
+flex-grow: 1; //Elemento puede crecer segun disponibilidad en padre
+flex-shrink: 0; //Elemento no se puede encojer (con 1, seria igual al anterior)
+flex-basis: auto; //Se distribuye el espacio segun el contenido del elemento
+flex-basis: 0; //Para indicar que todos tengan el mismo tamanio independientemente de su contenido
+
+flex: 1; //Todos comparten el mismo tamanio, pudiendo crecer y achicarse
+si indico flex: 2; sobre cierto hijo y flex: 1; sobre el resto, el primero tendra el doble. asi sucesivamente con establecerlo en 2, 3, 4 etc.
+
+justify-content: space-evenly;
+justify-content: space-between;
+justify-content: space-arount;
+justify-content: center;
+justify-content: flex-start; justify-content: flex-end;
+
+align-items: center; //Centra los elementos en el eje secundario (si orientacion horizontal, lo centrara a nivel de columna, si no, viceversa)
+
+gap: 16px; indica espacio entre los elementos (util en center, start, end)

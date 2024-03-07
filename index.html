@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -14,22 +14,25 @@
       href="./img/bx-user-pin.ico"
       type="image/x-icon"
     />
+    <script src="./js/index.js"></script>
     <title>Personal Portfolio</title>
   </head>
   <body>
     <header class="header">
       <a href="#" class="logo">Emi.</a>
 
+      <div class="bx bx-menu" id="menu-icon"></i></div>
+
       <nav class="navbar">
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Technologies</a>
-        <a href="#">Contact</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="home">
+    <section class="home" id="home">
       <div class="home-content">
         <h1>Hi, I'm Emiliano</h1>
         <h3>Software Tester</h3>
@@ -49,6 +52,82 @@
         <a href="#"><i class="bx bxl-linkedin"></i></a>
         <a href="#"><i class="bx bxl-instagram"></i></a>
         <a href="#"><i class="bx bxl-github"></i></a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="heading">About <span>Me</span></h2>
+      <div class="about-img">
+        <img src="./img/cv.jpg" alt="me">
+        <span class="circle-spin"></span>
+      </div>
+
+      <div class="about-content">
+        <h3>Software Tester</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga dolor quidem laudantium omnis eos, possimus dolore pariatur ipsum ab animi. Sint sit sed voluptate repellat earum iusto quibusdam temporibus deserunt.</p>
+        <div class="btn-box">
+          <a href="#">Read more</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <h2 class="heading">My <span>Education</span></h2>
+      
+      <div class="education-row">
+        <div class="education-column">
+          <h3 class="title">Education</h3>
+          <div class="education-box">
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><i class='bx bxs-calendar' > 2018 - 2020</i></div>
+                <h3>Master - Technicial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam praesentium vero architecto perspiciatis, aperiam esse porro velit impedit magni dolores eos, cupiditate ullam fugiat amet autem distinctio, id ut!</p>
+
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><i class='bx bxs-calendar' > 2018 - 2020</i></div>
+                <h3>Master - Technicial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam praesentium vero architecto perspiciatis, aperiam esse porro velit impedit magni dolores eos, cupiditate ullam fugiat amet autem distinctio, id ut!</p>              </div>
+            </div>
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><i class='bx bxs-calendar' > 2018 - 2020</i></div>
+                <h3>Master - Technicial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam praesentium vero architecto perspiciatis, aperiam esse porro velit impedit magni dolores eos, cupiditate ullam fugiat amet autem distinctio, id ut!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-column">
+          <h3 class="title">Experience</h3>
+          <div class="education-box">
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><i class='bx bxs-calendar' > 2018 - 2020</i></div>
+                <h3>Work - Technicial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam praesentium vero architecto perspiciatis, aperiam esse porro velit impedit magni dolores eos, cupiditate ullam fugiat amet autem distinctio, id ut!</p>
+
+              </div>
+            </div>
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><i class='bx bxs-calendar' > 2018 - 2020</i></div>
+                <h3>Work - Technicial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam praesentium vero architecto perspiciatis, aperiam esse porro velit impedit magni dolores eos, cupiditate ullam fugiat amet autem distinctio, id ut!</p>              </div>
+            </div>
+            <div class="education-content">
+              <div class="content">
+                <div class="year"><i class='bx bxs-calendar' > 2018 - 2020</i></div>
+                <h3>Work - Technicial</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quibusdam praesentium vero architecto perspiciatis, aperiam esse porro velit impedit magni dolores eos, cupiditate ullam fugiat amet autem distinctio, id ut!</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </body>

@@ -1,5 +1,4 @@
 // TOGGLE ICON NAVBAR
-
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
@@ -15,7 +14,7 @@ let navlinks = document.querySelectorAll("header nav a");
 window.onscroll = () => {
   sections.forEach((sec) => {
     let top = window.scrollY;
-    let offset = sec.offsetTop - 200;
+    let offset = sec.offsetTop - 100;
     let height = sec.offsetHeight;
     let id = sec.getAttribute("id");
 
@@ -31,9 +30,27 @@ window.onscroll = () => {
 
   //STICKY HEADER
   let header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 200);
+  header.classList.toggle("sticky", window.scrollY > 100);
 
   //REMOVE MENU ICON AND CLOSE NAVBAR WHEN SCROLL
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
+
+  // ANIMATION FOOTER ONSCROLL
+  let hideFooter = document.querySelector(".animate.scroll");
+
+  hideFooter.classList.toggle(
+    "show-footer",
+    this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight
+  );
 };
+
+//SCROLL TOP ICON
+let iconTop = document.querySelector(".footer-iconTop");
+
+iconTop.addEventListener("click", () =>
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+);

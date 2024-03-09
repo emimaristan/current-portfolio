@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   outline: none;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 :root {
@@ -26,6 +26,11 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
 }
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
 /* HEADER AND NAVBAR */
 .header {
   position: fixed;
@@ -38,7 +43,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .header.sticky {
@@ -62,7 +67,7 @@ body {
   width: 100%;
   height: 100%;
   animation: showRight 0.7s ease forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 #menu-icon {
@@ -84,7 +89,7 @@ body {
   background-color: var(--bg-color);
   width: 100%;
   height: 100%;
-  animation: showRight 1.4s ease forwards;
+  animation: showRight 1s ease forwards;
   animation-delay: 1.3s;
   z-index: 2;
 }
@@ -238,6 +243,7 @@ span {
   border-bottom: 0.2rem solid var(--bg-color);
   border-left: 0.2rem solid var(--main-color);
   border-right: 0.2rem solid var(--main-color);
+  animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content {
@@ -350,6 +356,73 @@ span {
   padding-top: 0.5rem;
 }
 /* EDUCATION CONTENT */
+
+/* SKILLS CONTENT */
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.skills .skills-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.skills-row .skills-column {
+  flex: 1 1 40rem;
+  width: 49%;
+}
+
+.skills-column .title {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.skills-box {
+  position: relative;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+}
+
+.skills-box::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--second-bg-color);
+  opacity: 0;
+  width: 0;
+  height: 100%;
+  transition: 1s;
+  z-index: -1;
+}
+
+.skills-box:hover::before {
+  opacity: 0.5;
+  width: 100%;
+}
+
+.skills-box .skills-content {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+}
+
+.skills-content .progress {
+  padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+  display: flex;
+  justify-content: space-between;
+}
+/* SKILLS CONTENT */
 
 /* CONTACT CONTENT */
 .contact {
@@ -572,12 +645,29 @@ span {
 
 /* FOOTER */
 .footer {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 2rem 9%;
   background: var(--second-bg-color);
+}
+
+.animate.scroll {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.show-footer {
+  animation: showBottom 0.7s ease forwards;
+  animation-delay: 0s;
 }
 
 .footer-text p {
@@ -656,6 +746,9 @@ span {
 
   #menu-icon {
     display: block;
+    opacity: 0;
+    animation: showMenu 1.5s ease forwards;
+    animation-delay: 0.5s;
   }
 
   .navbar {
@@ -695,6 +788,13 @@ span {
   .home-sci a {
     width: 3.8rem;
     height: 3.8rem;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -743,6 +843,25 @@ span {
 @keyframes showRight {
   100% {
     width: 0;
+  }
+}
+
+@keyframes showMenu {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes aboutSpinner {
+  100% {
+    transform: translate(-50%, -55%) rotate(360deg);
+  }
+}
+
+@keyframes showBottom {
+  100% {
+    height: 0;
+    opacity: 0;
   }
 }
 /* KEYFRAMES ANIMATIONS */
